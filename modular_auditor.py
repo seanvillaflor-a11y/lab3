@@ -1,3 +1,23 @@
+#global constant
+MAX_CAPACITY=500
+TAX_RATE = 0.1
+
+def get_valid_input():
+        user_input = input("Enter stock quantity or type quit to exit: ")
+
+        if user_input == "quit":
+            return "quit"
+        try:
+            quantity = int(user_input)
+        except ValueError:
+            print("Invalid input. please enter a number or type quit.")
+            return None # invalidate output to avoid any rejected input to be added in data
+
+        if quantity < 0 :
+            print("invalid input. please enter a non-negative stock quantity")
+            return None
+
+        return quantity
 
 
 
